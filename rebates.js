@@ -1,16 +1,16 @@
 
-
+//age and rebates (array) required parameters to return the calculated rebate
  export function calcRebate(age, tbl) {
 
     let reb = 0;
+    let min = 0;
     for (let [age_limit, rebate] of tbl) {
         
-        console.log(`Age ${age_limit}, Rebate ${rebate}`);
-        
-        if(age_limit<=age){
+        if (min < age){
             reb += rebate;
+            
         }
-        console.log(`Actual age: ${age}, Reb: ${reb}`)
+        min = age_limit;
     }
 
     return reb;
