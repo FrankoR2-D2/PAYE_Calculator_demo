@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/FrankoR2-D2/PAYE_Calculator_v2/issues"
   },
-  "homepage": "https://github.com/FrankoR2-D2/PAYE_Calculator_v2#readme"
+  "homepage": "https://github.com/FrankoR2-D2/PAYE_Calculator_v2#readme",
+  "type": "module"
 }
