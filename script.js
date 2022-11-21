@@ -1,10 +1,5 @@
 
-//Required functions and values as passed through parameters for display() function
-import { calcTax } from "./raw_tax.js";
-import { tax_rates as rates, rebates } from "./tax_rates.js";
-import { calcRebate } from "./rebates.js";
-import { monthly_uif_limit } from "./tax_rates.js";
-import { calcIUF } from "./uif.js";
+import { calcPayRoll } from "./calc_pay_roll.js";
 
 const payeForm = document.getElementById('paye_form');
 
@@ -17,20 +12,23 @@ payeForm.addEventListener('submit', (e) => {
     let monthly_earnings = document.getElementById('salary').value;
     let age = document.getElementById('age').value;
 
-    //Calss output function - display calculated in index.html 
-    display(monthly_earnings*12, calcRebate(age, rebates),calcIUF(monthly_earnings, monthly_uif_limit), calcTax(rates, monthly_earnings*12))
+    //Calculates the take home pay, rebate, uif and tax
+    const result = calcPayRoll(monthly_earnings, age);
+
+    //displays to index.html
+    display(result);
 });
 
 
 //Output calculated tax
-function display(annual_earnings, rebate,uif, tax){
-    document.getElementById('annual_earnings').innerHTML = annual_earnings;
-    document.getElementById('rebate').innerHTML = rebate;
-    document.getElementById('mthly_uif').innerHTML = uif;
-    document.getElementById('raw_tax').innerHTML = tax;
-    document.getElementById('tax_after').innerHTML = tax - rebate;
-    document.getElementById('mthly_tax_after').innerHTML = (tax - rebate)/12;
-    document.getElementById('take_home_pay').innerHTML = (annual_earnings/12) - (tax - rebate)/12 - uif;
+function display(result){
+    document.getElementById('annual_earnings').innerHTML = result.annual_earnings; 
+    document.getElementById('rebate').innerHTML = result.rebate;
+    document.getElementById('mthly_uif').innerHTML = result.mthly_uif;
+    document.getElementById('raw_tax').innerHTML = result.raw_tax;
+    document.getElementById('tax_after').innerHTML = result.tax_after; 
+    document.getElementById('mthly_tax_after').innerHTML = result.mthly_tax_after;
+    document.getElementById('take_home_pay').innerHTML = result.take_home_pay;
 }
 
 
