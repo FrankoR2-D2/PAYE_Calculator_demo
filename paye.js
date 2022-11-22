@@ -1,7 +1,7 @@
 //age and rebates (array) required parameters to return the calculated rebate
 // example of tbl =[[65,16425],[75,9000], [-1,2997]];
 // the left value is the limit and the added amount is the right value in two dimensional array
-export function accumulateTableUntilCapped(capped_value, tbl) {
+export function lookupAccumulatedTableValue(capped_value, tbl) {
     let reb = 0; // the rebate value that will be returned
     let min = 0; // initial cap 
     for (let [age_limit, rebate] of tbl) {
