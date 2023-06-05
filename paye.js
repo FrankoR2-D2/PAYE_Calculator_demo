@@ -5,7 +5,7 @@ export function lookupAccumulatedTableValue(capped_value, tbl) {
     let reb = 0; // the rebate value that will be returned
     let min = 0; // initial cap 
     for (let [age_limit, rebate] of tbl) {
-        if (min < capped_value){
+        if (min <= capped_value){
             reb += rebate;
         }
         min = age_limit;
@@ -28,9 +28,11 @@ export function cappedAmmount(value, limit){
 
 
 
+
+
 //Tax rates array, annual earnings passed through parameters for function to calculate the tax which is returned.
 // example of table = [[18, 226000], [26, 353100], [31, 488700], [36, 641400], [39, 817600], [41, 1731600], [45, -1]];
-export function accumulateByRate(table, amount) { // 
+export function accumulatedValueByRate(table, amount) { // 
     let min = 0;
     let tax = 0;
     // iterates through tax_rates array
