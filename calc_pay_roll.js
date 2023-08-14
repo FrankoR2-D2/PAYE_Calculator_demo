@@ -78,7 +78,6 @@ class Add extends Arithmetic {
         super(value1, value2, '+', result)
     }
     execute(elements) {
-
         elements[this.result] = elements[this.value1] + elements[this.value2];
         return elements;
     }
