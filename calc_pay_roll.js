@@ -167,7 +167,7 @@ class Deanualize extends ManipulateTable {
     }
 }
 
-// Test Deannualize class
+// Test Deannualize class   
 // const dn = new Deanualize('ammount', 'period', 'result');
 // let inputs_d = { ammount: inputs_a['result'], period: inputs_p['period']};
 
