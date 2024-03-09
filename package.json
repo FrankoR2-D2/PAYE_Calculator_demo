@@ -1,20 +1,11 @@
 {
-  "name": "paye_calculator_v2",
+  "name": "paye_calculator_demo",
   "version": "1.0.0",
-  "description": "Pay as you earn tax calculator version 2",
-  "main": "script.js",
+  "description": "Recreating paye calculator",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/FrankoR2-D2/PAYE_Calculator_v2.git"
-  },
-  "author": "Franko Reynolds",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/FrankoR2-D2/PAYE_Calculator_v2/issues"
-  },
-  "homepage": "https://github.com/FrankoR2-D2/PAYE_Calculator_v2#readme",
-  "type": "module"
+  "author": "",
+  "license": "ISC"
 }
